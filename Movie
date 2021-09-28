@@ -1,0 +1,82 @@
+package Lab2;
+public class Movie {
+	//перерахування змінних класу
+		private String name;
+		private int year;
+		private String movie_studio;
+		private String director;
+		
+		String print_name="Назва фільму";
+		String print_year="рік випуску";
+		String print_studio="кіностудія";
+		String print_director="режисер";
+		String result="";
+		
+		static int number=0;
+		
+		public Movie(){ //конструктор класу по замовчуванню
+			this.name="Movie";
+			this.year=0000;
+			this.movie_studio="Movie studio";
+			this.director="Director";
+		}
+		
+		public Movie(String name, int year, String movie_studio, String director){//конструктор класу
+			this.name=name;
+			this.year=year;
+			this.movie_studio=movie_studio;
+			this.director=director;
+		}
+		//методи класу
+		 public void set_name(String name){
+			 this.name=name;
+		 }
+		 public void set_year(int year){
+			 
+			 if(year>1895 & year<2022) {//присвоює рік випуску фільму
+				 this.year=year;
+
+			 }else {//перевіряє чи рік випуску є коректним
+				 System.out.println("Рік випуску фільму: '"+this.name+"' задано невірно!" );
+			 }
+		 }
+		 public void set_movie_studio(String movie_studio){//присвоює назву кіностудії
+			 this.movie_studio=movie_studio;
+		 }
+		 public void set_director(String director){//присвоює прізвище і ім’я режисера
+			 this.director=director;
+		 }
+		 
+		 
+		 public String get_name(){//повертає назву фільму
+			 return name;
+		 }
+		 public int get_year(){//повертає рік випуску фільму
+			 return year;
+		 }
+		 public String get_movie_studio(){//повертає назву кіностудії
+			 return movie_studio;
+		 }
+		 public String get_director(){//повертає прізвище і ім'я режисера
+			 return director;
+		 }
+
+		 
+		 public void print_Movie(){//виводить на екран інформацію про фільм
+			 result=print_name+": '"+this.name+"',\t"+print_year+": "+this.year+",\t "+print_studio+": '"+this.movie_studio+"', "+print_director+": "+this.director;
+			 System.out.println(result);
+
+		 }
+		 public void print_Movie_Upper(){//виводить на екран інформацію про фільм з верхнім регістром
+			 result=print_name+": '"+this.name+"',\t"+print_year+": "+this.year+",\t"+print_studio+": '"+this.movie_studio+"', "+print_director+": "+this.director;
+			 System.out.println(result.toUpperCase());
+
+		 }
+		 
+		 public int get_number() {//повертає порядковий номер фільму
+			 return ++number;
+		 }
+
+
+	
+}
